@@ -44,14 +44,14 @@ class ContactController extends Controller
     {
 
         $this->validate( $request, [
-            'contact' => 'required|digits:9',
-            'email' => 'required|unique:contacts,email',
+            'contact' => 'required|digits:9|unique:contacts,contact',
+            'email' => 'required|email|unique:contacts,email',
             'name' => 'required|min:5|max:255',
         ], [], [] );
 
         $dados = $request->all();
       
-        $contact = Contact::create($dados);
+        Contact::create($dados);
 
         return redirect()->route( 'contacts.index' );
     
@@ -90,8 +90,8 @@ class ContactController extends Controller
     {
 
         $this->validate( $request, [
-            'contact' => 'required|digits:9',
-            'email' => 'required|string|unique:contacts,email,'.$contact->id.',id',
+            'contact' => 'required|digits:9|unique:contacts,contact,'.$contact->id.',id',
+            'email' => 'required|email|unique:contacts,email,'.$contact->id.',id',
             'name' => 'required|min:5|max:255',
         ], [], [] );
 

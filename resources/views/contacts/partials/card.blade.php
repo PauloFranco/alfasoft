@@ -12,7 +12,7 @@
             @include('contacts.partials.action-buttons', [
                 'user'    => $contact,
                 'showLabel' => false,
-                'except'    => [ 'back' ],
+                'except'    => [],
             ])
         </div>
     </div>
