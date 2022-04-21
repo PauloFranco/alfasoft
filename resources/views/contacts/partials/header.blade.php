@@ -1,14 +1,16 @@
 <div class="page-header clearfix">
 
-    <div class="pull-right">
-        <a class="btn btn-info" href="{{route('contacts.index')}}" style="float:right" role="button">Contatos</a>
+    @guest
+        <div class="pull-right">
+            <a class="btn btn-info" href="{{route('login')}}" style="float:right" role="button">login</a>
+        </div>
+    @endguest
 
-        @include('contacts.partials.action-buttons', [
-            'contact'    => $contact,
-            'showLabel' => true,
-            'except'    => $except,
-        ])
+    @auth
+    <div class="pull-right">
+        <a class="btn btn-info" href="{{route('logout')}}" style="float:right" role="button">logout</a>
     </div>
+    @endauth
 
     <h1>
         {{ $title }}

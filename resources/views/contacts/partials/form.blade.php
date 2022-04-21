@@ -21,18 +21,18 @@
                placeholder="123456789"
                value="{{ old('contact', $contact->contact) }}">
 
-        @include('common.form.errors', ['field' => 'skill'])
+        @include('common.form.errors', ['field' => 'contact'])
     </div>
 
     <div class="col-sm-4 form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-        <label for="skill" class="control-label">E-mail</label>
+        <label for="email" class="control-label">E-mail</label>
 
         <input type="email" name="email" id="email" class="form-control"
                required
                placeholder="joaosilva@email.com"
                value="{{ old('email', $contact->email) }}">
 
-        @include('common.form.errors', ['field' => 'skill'])
+        @include('common.form.errors', ['field' => 'email'])
     </div>
     
     

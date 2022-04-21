@@ -19,3 +19,7 @@ $router->get( '/', [ 'uses' => 'ContactController@index', 'as' => 'home' ] );
 
 
 $router->resource('contacts','ContactController');
+
+$router->get('login',['uses' => 'LoginController@index', 'as' => 'login'])->middleware('guest');
+$router->post('login',['uses' => 'LoginController@login', 'as' => 'login'])->middleware('guest');
+$router->get('logout',['uses' => 'LoginController@logout', 'as' => 'logout'])->middleware('auth');
