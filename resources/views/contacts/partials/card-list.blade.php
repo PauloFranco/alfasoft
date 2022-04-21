@@ -9,5 +9,8 @@
                 para cadastrar o primeiro contato.
             </li>
         @endauth
+    @guest
+            <h1>Não há contatos cadastrados no momento.</h1>
+    @endguest
     @endforelse
 </ul>
