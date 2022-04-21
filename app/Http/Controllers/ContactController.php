@@ -63,9 +63,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Contact $contact)
     {
-        //
+        return view('contacts.show', compact('contact'));
     }
 
     /**
@@ -110,8 +110,10 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        return redirect()->route( 'contacts.index' );
+
     }
 }

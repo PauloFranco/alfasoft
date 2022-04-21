@@ -2,6 +2,6 @@
     'action'  => $action,
     'show'    => isset($show) ? $show : true,
     'color'   => 'warning',
-    'label'   => 'inscrever',
+    'label'   => 'editar',
     'icon'    => 'pencil-alt',
 ])
